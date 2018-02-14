@@ -4,7 +4,6 @@ import sys
 def get_optimal_value(capacity, weights, values):
     value = 0.
     # write your code here
-
     return value
 
 
