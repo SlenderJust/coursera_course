@@ -3,7 +3,16 @@ import sys
 
 def get_optimal_value(capacity, weights, values):
     value = 0.
-    # write your code here
+    eff = sorted([(w,v) for w,v in zip(weights,values)], key = lambda t:t[1]/t[0], reverse = True)
+    for item in eff:
+        if capacity == 0:
+            return value
+        elif capacity >= item[0]:
+            value += item[1]
+            capacity -= item[0]
+        else:
+            value += capacity * item[1] / item[0]
+            capacity = 0
     return value
 
 
